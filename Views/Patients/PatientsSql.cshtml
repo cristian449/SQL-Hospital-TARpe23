@@ -1,31 +1,34 @@
 ﻿<body style="padding: 10px">
     <div class="col-xs-8" col-xs-offset-2>
         <div class="panel-heading">
-            <h3>Patient Search</h3>
+            <h3>Employee Search</h3>
         </div>
-        <form asp-controller="Patients" asp-action="PatientSql">
+        <form asp-controller="Patients" asp-action="PatientsSql">
             <div>
-                <label for="id">PatientID</label>
+                <label for="patientid">PatientID</label>
                 <br />
-                <input type="number" name="id" placeholder="PatientID" />
+                <input type="number" name="patientid" placeholder="PatientID" />
             </div>
             <div>
-                <label for="gender">Gender</label>
+                <label for="name">Name</label>
                 <br />
-                <select name="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
+                <input type="text" name="name" placeholder="Name" />
             </div>
             <br />
             <div>
-                <label for="adress">Adress</label>
+                <label for="gender">Gender</label>
+                <br />
+                <input type="text" name="gender" placeholder="Gender" />
+            </div>
+            <br />
+            <div>
+                <label for="address">Address</label>
                 <br />
                 <input type="text" name="address" placeholder="Address" />
             </div>
             <br />
             <div>
-                <label for="phonenr">PhoneNr</label>
+                <label for="phonenr">Phonenr</label>
                 <br />
                 <input type="number" name="phonenr" placeholder="Phonenr" />
             </div>
@@ -37,21 +40,15 @@
             </div>
             <br />
             <div>
-                <label for="salary">Salary</label>
+                <label for="doctorid">DoctorID</label>
                 <br />
-                <input type="number" name="salary" placeholder="Salary" />
-            </div>
-            <br />
-            <div>
-                <label for="doctorID">DoctorID</label>
-                <br />
-                <input type="number" name="doctorID" placeholder="DoctorID" />
+                <input type="number" name="doctorid" placeholder="DoctorID" />
             </div>
             <br />
             <div>
                 <label for="condition">Condition</label>
                 <br />
-                <input type="text" name="condition" placeholder="Condition" />
+                <input type="number" name="condition" placeholder="Condition" />
             </div>
             <br />
             <div>
@@ -67,39 +64,36 @@
             </div>
             <br />
             <div>
-                <label for="wardID">WardID</label>
+                <label for="wardid">WardiD</label>
                 <br />
-                <input type="number" name="wardID" placeholder="WardID" />
+                <input type="number" name="wardid" placeholder="WarID" />
             </div>
             <br />
-            <input type="submit" value="PatientSql" />
+            <input type="submit" value="PatientsSql" />
         </form>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">PatientID</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Address</th>
-                    <th scope="col">PhoneNr</th>
+                    <th scope="col">Phonenr</th>
                     <th scope="col">BirthDate</th>
                     <th scope="col">DoctorID</th>
-                    <th scope="col">Condition
+                    <th scope="col">Condition</th>
                     <th scope="col">Date_Checked_In</th>
                     <th scope="col">Discharge_Date</th>
                     <th scope="col">WardID</th>
-
                 </tr>
             </thead>
             <tbody>
                 @foreach (var patient in Model)
                 {
                     <tr>
-                        <td>@patient.ID</td>
+                        <td>@patient.PatientID</td>
                         <td>@patient.Name</td>
-                        <td>@patient.Gender</td>
                         <td>@patient.Address</td>
-                        <td>@patient.PhoneNr</td>
+                        <td>@patient.Phonenr</td>
                         <td>@patient.BirthDate</td>
                         <td>@patient.DoctorID</td>
                         <td>@patient.Condition</td>

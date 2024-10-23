@@ -32,7 +32,7 @@ namespace Hospital_CristianPent_TARpe23.Controllers
         public IEnumerable<Patient> SearchResult()
         {
             var result = _context.Patients
-                .FromSqlRaw<Patient>("Spsearchpatients")
+                .FromSqlRaw<Patient>("spSearchPatients")
                 .ToList();
 
             return result;
@@ -47,7 +47,7 @@ namespace Hospital_CristianPent_TARpe23.Controllers
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "dbo.Spsearchpatients";
+                cmd.CommandText = "dbo.spSearchPatients";
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 con.Open();
                 SqlDataReader sdr = cmd.ExecuteReader();
