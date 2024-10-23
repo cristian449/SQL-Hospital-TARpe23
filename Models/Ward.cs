@@ -5,7 +5,7 @@ namespace Hospital_CristianPent_TARpe23.Models
     public class Ward
     {
         [Key]
-        public int DepartmentID { get; set; }
+        public int WardID { get; set; }
 
         public string WardName { get; set; }
 

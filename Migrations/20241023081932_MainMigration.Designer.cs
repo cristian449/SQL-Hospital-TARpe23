@@ -3,6 +3,7 @@ using Hospital_CristianPent_TARpe23.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hospital_CristianPent_TARpe23.Migrations
 {
     [DbContext(typeof(HospitalContextDB))]
-    partial class PatientContextModelSnapshot : ModelSnapshot
+    [Migration("20241023081932_MainMigration")]
+    partial class MainMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,11 +169,11 @@ namespace Hospital_CristianPent_TARpe23.Migrations
 
             modelBuilder.Entity("Hospital_CristianPent_TARpe23.Models.Ward", b =>
                 {
-                    b.Property<int>("WardID")
+                    b.Property<int>("DepartmentID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WardID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentID"));
 
                     b.Property<int>("DoctorID")
                         .HasColumnType("int");
@@ -189,7 +192,7 @@ namespace Hospital_CristianPent_TARpe23.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("WardID");
+                    b.HasKey("DepartmentID");
 
                     b.ToTable("Wards");
                 });

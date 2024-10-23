@@ -9,9 +9,9 @@ namespace Hospital_CristianPent_TARpe23.Models
 
         public string Name { get; set; }
 
-        public string Wards { get; set; }
+        public int Wards { get; set; }
 
-        public string Departments { get; set; }
+        public int Departments { get; set; }
         
     }
 }
