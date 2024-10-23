@@ -1,0 +1,114 @@
+﻿<body style="padding: 10px">
+    <div class="col-xs-8" col-xs-offset-2>
+        <div class="panel-heading">
+            <h3>Patient Search</h3>
+        </div>
+        <form asp-controller="Patients" asp-action="PatientSql">
+            <div>
+                <label for="id">PatientID</label>
+                <br />
+                <input type="number" name="id" placeholder="PatientID" />
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <br />
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <br />
+            <div>
+                <label for="adress">Adress</label>
+                <br />
+                <input type="text" name="address" placeholder="Address" />
+            </div>
+            <br />
+            <div>
+                <label for="phonenr">PhoneNr</label>
+                <br />
+                <input type="number" name="phonenr" placeholder="Phonenr" />
+            </div>
+            <br />
+            <div>
+                <label for="birthdate">BirthDate</label>
+                <br />
+                <input type="text" name="birthdate" placeholder="BirthDate" />
+            </div>
+            <br />
+            <div>
+                <label for="salary">Salary</label>
+                <br />
+                <input type="number" name="salary" placeholder="Salary" />
+            </div>
+            <br />
+            <div>
+                <label for="doctorID">DoctorID</label>
+                <br />
+                <input type="number" name="doctorID" placeholder="DoctorID" />
+            </div>
+            <br />
+            <div>
+                <label for="condition">Condition</label>
+                <br />
+                <input type="text" name="condition" placeholder="Condition" />
+            </div>
+            <br />
+            <div>
+                <label for="date_checked_in">Date_Checked_In</label>
+                <br />
+                <input type="text" name="date_checked_in" placeholder="Date_Checked_In" />
+            </div>
+            <br />
+            <div>
+                <label for="discharge_date">Discharge_Date</label>
+                <br />
+                <input type="text" name="discharge_date" placeholder="Discharge_Date" />
+            </div>
+            <br />
+            <div>
+                <label for="wardID">WardID</label>
+                <br />
+                <input type="number" name="wardID" placeholder="WardID" />
+            </div>
+            <br />
+            <input type="submit" value="PatientSql" />
+        </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">PhoneNr</th>
+                    <th scope="col">BirthDate</th>
+                    <th scope="col">DoctorID</th>
+                    <th scope="col">Condition
+                    <th scope="col">Date_Checked_In</th>
+                    <th scope="col">Discharge_Date</th>
+                    <th scope="col">WardID</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var patient in Model)
+                {
+                    <tr>
+                        <td>@patient.ID</td>
+                        <td>@patient.Name</td>
+                        <td>@patient.Gender</td>
+                        <td>@patient.Address</td>
+                        <td>@patient.PhoneNr</td>
+                        <td>@patient.BirthDate</td>
+                        <td>@patient.DoctorID</td>
+                        <td>@patient.Condition</td>
+                        <td>@patient.Date_Checked_In</td>
+                        <td>@patient.Discharge_Date</td>
+                        <td>@patient.WardID</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
